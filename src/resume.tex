@@ -1,68 +1,92 @@
-\documentclass{res}
+\documentclass[11pt,a4paper]{moderncv}
+
+\moderncvtheme[green]{classic}
+
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[portuguese]{babel}
-\usepackage{eurosym}
-\usepackage{graphics}
-\usepackage{hyperref}
-%%\usepackage{floatflt}
-\usepackage{graphics}
-\usepackage{graphicx}
-\usepackage{color}
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\recomputelengths
+
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
+\fancyfoot[RE,LO]{\footnotesize } % other info in "inner" position of footer line
+
+% personal data                                                                                                                                                 
+\firstname{João Paulo}                                                                                                                                                
+\familyname{\\ \\Madureira}
+\title{Curriculum Vitae}               % optional, remove the line if not wanted                                                                                
+\address{via Palazzon 7, Riese Pio X}{31039 Treviso, Italy}    % optional, remove the line if not wanted                                                        
+\mobile{+39 340 5997839}                    % optional, remove the line if not wanted                                                                           
+\phone{+385 92 2201317}                      % optional, remove the line if not wanted                                                                          
+%\fax{312 996 1491}                          % optional, remove the line if not wanted                                                                          
+\email{jpmadureira@gmail.com}                      % optional, remove the line
+% if not wanted \extrainfo{additional information (optional)} % optional, remove the line if not wanted                                                                        
+% \photo[84pt]{pic_enhached.jpg}          % '64pt' is the height the picture
+% must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
 
 \begin{document}
+\maketitle
 
-\name{João Paulo Pinto Soares Madureira\\[12pt]}     % the \\[12pt] adds a blank
-                               				         % line after name
-                               				         
-\address{\bf  PRESENT ADDRESS\\Places and stuff\\cities and the like\\(351) 55
-555 555} \address{\bf PERMANENT ADDRESS\\Home town\\ home city\\  (351) 55 555
-5555}
-                               				               
-\begin{resume}
+\vspace{-10mm}
+
+%Section
+\section{Info}
+\cvcomputer{Born}{\small October 13th, 1983 at Porto
+(Portugal)\normalsize}{Citizenship}{\small Portuguese\normalsize}
+\cvcomputer{Additional Address}{J.Salvadora 14, Ciglenica, 44320 Kutina, Croatia}{Driving License}{\small B\normalsize}
+\cvcomputer{LinkedIn}{\small \url{http://it.linkedin.com/in/goivan}\normalsize}{Elance}{\small \url{http://ntrp.elance.com}\normalsize}
+\cvcomputer{Blog}{\small \url{http://ntrpivan.blogspot.com}\normalsize}{Skype}{\small ivan.ntrp}
+
+\vspace{-4mm}  
 
 \section{WORK EXPERIENCE}
+\vspace{-2mm}
+\cventry{12/2012-Present}{Java Developer}{Blip Web
+Designers}{Porto}{Portugal}{
+Development and maintenance of Betfair's Sportsbook website which included:
+\begin{itemize}
+  \item UK and Italian websites;
+  \item High performance and scalable web services supporting all of Betfair's
+  sites and mobile applications.
+\end{itemize}
+Technologies and tools used:
+\begin{itemize}
+  \item Spring, Tomcat, Jetty for the website and services;
+  \item Couchbase for cashing purposes;
+  \item Maven, Jenkins and Chef for build and deployment management;
+  \item TestNG and Selenium for integration tests.
+\end{itemize}
+}
 
-\vspace{-0.1in}
-\begin{tabbing}
-\hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-{\bf Java Developer} \>Blip Web Designers \>12/2012 -
-Present\\
-\>Porto, Portugal
-\end{tabbing}\vspace{-20pt}      % suppress blank line after tabbing
-Development of Betfair's Sportsbook website and high performance web
-services as part of the Sportsbook platform using Spring, Tomcat, Jetty and
-Couchbase for caching purposes.
+\cventry{05/2011-11/2012}{Software Consultant}{Portugal Telecom
+(PT)}{Lisbon}{Portugal}{
+Development of an application monitoring solution for Portugal Telecom. Worked
+on UI components developed with Ruby on Rails, JQuery, Sinatra and memcached,
+backend message routing with Apache ActiveMQ and Camel, and MySQL for the datasource.
+}
 
-\begin{tabbing}
-\hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-{\bf Software Consultant} \>Portugal Telecom (PT)     \>05/2011 - 11/2012\\
-\>Lisbon, Portugal
-\end{tabbing}\vspace{-20pt}      % suppress blank line after tabbing
-Development of an application monitoring solution for Portugal Telecom.
-Worked on UI components developed with Ruby on Rails, JQuery, Sinatra and memcached, backend message routing with Apache ActiveMQ and Camel, and MySQL for the datasource.
+\cventry{11/2010-04/2011}{Software Developer}{Nokia Siemens Networks
+(NSN)}{Aveiro}{Portugal}{
+Design and implementation of a functional prototype using several new concepts
+that could be added to NSN's main network and performance management solution.
+This analysis not only included databases (ORACLE e PostgreSQL) but also web
+components (Portlets, J2EE and GWT) and modeling tools (EMF).
+}
 
-\begin{tabbing}
-\hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-{\bf Software Developer} \>Nokia Siemens Networks (NSN)    
-\>11/2010 - 04/2011\\ \>Aveiro, Portugal
-\end{tabbing}\vspace{-20pt}      % suppress blank line after tabbing
-Design and implementation of a functional prototype using several new concepts that could be added to NSN's main network and performance management solution.
-This analysis not only included databases (ORACLE e PostgreSQL) but also web components (Portlets, J2EE and GWT) and modeling tools (EMF).
-
-\begin{tabbing}
-\hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-{\bf Software Developer} \>Nokia Siemens Networks (NSN)    
-\>09/2009 - 10/2010\\ \>Aveiro, Portugal
-\end{tabbing}\vspace{-20pt}      % suppress blank line after tabbing
+\cventry{09/2009-10/2010}{Software Developer}{Nokia Siemens Networks
+(NSN)}{Aveiro}{Portugal}{
 Migration of the continuous integration process used by NSN's network and
-performance management solution to a centralized (cloud based) environment. This new environment used Bamboo for the frontend interface, Ruby on Rails for
-virtual machine and artifact management, SubVersion for source control and Maven for build management.
+performance management solution to a centralized (cloud based) environment.
+This new environment used Bamboo for the frontend interface, Ruby on Rails for
+virtual machine and artifact management, SubVersion for source control and
+Maven for build management.
+}
 
-\begin{tabbing}
-\hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-{\bf Software Developer} \>Nokia Siemens Networks (NSN)    
-\>01/2009 - 09/2009\\ \>Aveiro, Portugal
-\end{tabbing}\vspace{-20pt}      % suppress blank line after tabbing
+\cventry{01/2009-09/2009}{Software Developer}{Nokia Siemens Networks
+(NSN)}{Aveiro}{Portugal}{
 Design and implementation of a prototype for ETL handling based on ESB
 (Enterprise Service BUS). The purpose of this prototype was to use Apache
 ServiceMix to extracts performance metrics from network elements, process them
@@ -70,84 +94,49 @@ and load into NSN's network and performance management solution. Development of
 a continuous integration process using CruiseControl for the frontend
 interface, SubVersion for source control, Maven for build management and
 virtualization of test machines through KVM.
+}
 
-\begin{tabbing}
-\hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-{\bf Software Developer} \>Nokia Siemens Networks (NSN)    
-\>12/2007 - 12/2008\\ \>Aveiro, Portugal
-\end{tabbing}\vspace{-20pt}      % suppress blank line after tabbing
+\cventry{12/2007-12/2008}{Software Developer}{Nokia Siemens Networks
+(NSN)}{Aveiro}{Portugal}{
 Development of an ETL mechanism in Java to be used NSN's new network and
 performance management solution. Implementation of a production pipe using Ant,
 Clearcase and CruiseControl for this new solution.
+}
 
-\begin{tabbing}
-\hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-{\bf Software Developer} \>Siemens Networks    
-\>09/2006 - 11/2007\\ \>Aveiro, Portugal
-\end{tabbing}\vspace{-20pt}      % suppress blank line after tabbing
+\cventry{09/2006-11/2007}{Software Developer}{Siemens
+Networks}{Aveiro}{Portugal}{
 Activity developed as part of a professional trainee program.
 Design and specification of a new data format used by Siemens to describe a
 telecommunication network. This data format was meant to be less verbose and
 error-prone. Development and test of modules for Siemens' performance
 management solution in both C++ and Java.
+}
 
-\begin{tabbing}
-\hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-{\bf Software Developer} \>Siemens SA    
-\>03/2006 - 8/2006\\ \>Perafita, Portugal
-\end{tabbing}\vspace{-20pt}      % suppress blank line after tabbing
+\cventry{03/2006-8/2006}{Software Developer}{Siemens SA}{Perafita}{Portugal}{
 Activity developed as part of a curricular trainee program.
 Development of an IDE based on Eclipse RCP to aid on the development of
 Siemens’s network performance management solution.
+}
 
 \section{TRAINING}
 
-\begin{tabbing}
-\hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-{\bf } \>VMWare Educational Services    
-\>03/2012\\ \>
-\end{tabbing}\vspace{-20pt}
-Core Spring.
-
-\begin{tabbing}
-\hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-{\bf } \>Quality Tree Software    
-\>02/2008\\ \>
-\end{tabbing}\vspace{-20pt}
-Agile Testing and TDD (Test Driven Development).
-
-\begin{tabbing}
-\hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-{\bf } \>Learning Tree International    
-\>09/2007\\ \>
-\end{tabbing}\vspace{-20pt}
-Java Enterprise Application Development - JSP, JSF, EJB3, JPA, JMS.
-
-\begin{tabbing}
-\hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-{\bf } \>Learning Tree International    
-\>08/2007\\ \>
-\end{tabbing}\vspace{-20pt}
-Advanced Java Programming - Annotations, concurrency, class loaders, NIO, JMX
+\cventry{03/2012}{}{VMWare Educational Services}{}{}{Core Spring.}
+\cventry{02/2008}{}{Quality Tree Software}{}{}{Agile Testing and TDD (Test
+Driven Development).}
+\cventry{09/2007}{}{Learning Tree International}{}{}{Java Enterprise Application
+Development - JSP, JSF, EJB3, JPA, JMS.}
+\cventry{08/2007}{}{Learning Tree International}{}{}{Advanced Java Programming -
+Annotations, concurrency, class loaders, NIO, JMX}
 
 \section{EDUCATION}
 
-\begin{tabbing}
-\hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-{\bf } \>British Council
-\>09/2005 - 07/2006\\ \>Porto, Portugal
-\end{tabbing}\vspace{-20pt}
-CPE (Certificate of Proficiency in English).
+\cventry{09/2005-07/2006}{CPE (Certificate of Proficiency in English)}{British
+Council}{Porto}{Portugal}{
 English course and ESOL exam completed with a level B (between 75\% and 79\%).
+}
 
-\begin{tabbing}
-\hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-{\bf } \>Faculdade de Engenharia
-\>09/2001 - 09/2006\\ \>University of Porto, Portugal
-\end{tabbing}\vspace{-20pt}
-Licentiate in Informatics and Computing Engineering.
-Completed with an average of 16 out of 20.
-
-\end{resume}
+\cventry{09/2001-09/2006}{Licentiate in Informatics and Computing
+Engineering}{Faculty of Engineering from the University of Porto
+}{Porto}{Portugal}{Completed with an average of 16 out of 20.}
 
 \end{document}

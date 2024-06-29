@@ -1,43 +1,136 @@
-\documentclass[]{friggeri-cv}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wenneker Resume/CV
+% LaTeX Template
+% Version 1.1 (19/6/2016)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com) with extensive modifications by 
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[portuguese]{babel}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper,10pt]{memoir} % Font and paper size
+
+\input{structure.tex} % Include the file specifying document layout and packages
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION 
+%----------------------------------------------------------------------------------------
+
+\userinformation{ % Set the content that goes into the sidebar of each page
+\begin{flushright}
+% Comment out this figure block if you don't want a photo
+% \includegraphics[width=0.6\columnwidth]{photo.jpg}\\[\baselineskip] % Your photo
+\small % Smaller font size
+{John Doe} \\ % Your name
+\url{john@mail.com} \\ % Your email address
+\url{https://github.com} \\
+\url{https://www.linkedin.com/in} \\
+(351) 555-555-555 \\ % Your phone number
+\Sep % Some whitespace
+\textbf{Address} \\
+street \\
+whatever \\ % Address 1
+city \\ % Address 2
+country \\ % Address 3
+\vfill % Whitespace under this block to push it up under the photo
+\end{flushright}
+}
+
+%----------------------------------------------------------------------------------------
 
 \begin{document}
 
-\header{João}{Madureira}{Software Developer}
+\userinformation % Print your information in the left column
 
-\begin{aside}
-\section{contact}
-Some street somewhere
-There's this brown door
-That has this number
-Portugal
-~
-+351 555 555 55
-~
-\href{mailto:myemail@gmail.com}{myemail@gmail.com}
-\href{https://github.com/jmadureira}{github.com/jmadureira}
-\section{languages}
-portuguese native
-english proficiency
-\end{aside}
+\framebreak % End of the first column
 
 %----------------------------------------------------------------------------------------
-%       WORK EXPERIENCE SECTION
+%	HEADING
 %----------------------------------------------------------------------------------------
 
-\section{work experience}
+\cvheading{João Madureira} % Large heading - your name
 
-\begin{entrylist}
+\cvsubheading{Software Engineer} % Subheading - your occupation/specialization
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\CVSection{Experience}
+
 %------------------------------------------------
-\entry
-{12/2012-Now}
-{Blip Web Designers}
-{Porto, Portugal}
-{\emph{Java Developer} \\
-Development and maintenance of Betfair's Sportsbook website which included:
+
+\CVItem{February 2022 - Now, \textit{Teya}, Principal Engineer}
+{Worked on several projects with different responsibilities. \\
+\textbf{API gateway}
 \begin{itemize}
-  \item Both international ( \href{https://www.betfair.com/sport}{https://www.betfair.com/sport} ) and Italian ( \href{https://www.betfair.it/sport}{https://www.betfair.it/sport} ) websites;
+  \item Maintain and later on migrate Teya's API Gateway from NginX to Kong
+\end{itemize}
+\textbf{APIs}
+\begin{itemize}
+  \item Part of the API review team that ensured all APIs published by teams met the quality requirements
+  \item Designed and implemented an API publishing process aligned with PCI-DSS requirements
+\end{itemize}
+\textbf{Authorization}
+\begin{itemize}
+  \item Developed Teya's central authorization service based on SpiceDB (\url{https://authzed.com/spicedb})
+\end{itemize}
+\textbf{Internal productivity}
+\begin{itemize}
+  \item Implemented Teya's internal developer portal based on Backstage (\url{https://backstage.io/})
+  \item Developed tech scorecards to ensure all projects met the quality requirements
+  \item Created tools to visualize security vulnerabilities published by internal tools,
+  interact with k8s workloads on cloud environments and automate workflows
+\end{itemize}
+}
+
+%------------------------------------------------
+
+\CVItem{December 2020 - January 2022, \textit{Cloud Architect}, Körber Digital}
+{Responsible for designing cloud based solutions (based on Azure resources) as part of Körber Industry 4.0 initiative. Worked on the following projects:
+\begin{itemize}
+  \item Bootstrap an entire Azure cloud infrastructure to be connected to all development centers from the Körber group
+  \item Deploy and configure a fully functional Gitlab solution with auto-scaling, runners for CICD, private artifact registry among other features
+  \item Deploy a fully functional Azure K8s cluster with private networking, Active Directory authentication and auto-scaling
+  \item Consulted on different projects outside the Körber group
+\end{itemize}
+}
+
+%------------------------------------------------
+
+\CVItem{March 2016 - November 2020, \textit{CO-Founder and CTO}, Invisible Cloud}
+{Design and implementation of an online debt collection management solution called Invisible Collector
+\url{https://www.invisiblecollector.com}. \\
+Development of an online store for Artnovion (\url{https://www.artnovion.com}) and Kuietly (\url{https://www.kuietly.com}). \\
+Technologies and tools used:
+\begin{itemize}
+  \item Azure and AWS managed via Terraform;
+  \item Ruby on Rails with Vue.js for the website;
+  \item Dropwizard for APIs;
+  \item Memcached for caching purposes;
+  \item Chef for machine configuration management;
+  \item Galera Cluster over MariaDB and PostgreSQL;
+  \item RSpec, Cucumber, Junit for testing purposes.
+\end{itemize}
+}
+
+%------------------------------------------------
+
+\CVItem{Dec 2012 - March 2016, \textit{Java Developer}, Blip Web Designers}
+{Development and maintenance of Betfair's Sportsbook website which included:
+\begin{itemize}
+  \item Both international ( \url{https://www.betfair.com/sport} ) and Italian ( \url{https://www.betfair.it/sport} ) websites;
   \item Development and support for some of Betfair's signature products like \emph{Cash Out Multiples} and \emph{Price Rush};
   \item High performance and scalable web services supporting all of Betfair's sites and mobile applications.
 \end{itemize}
@@ -50,13 +143,22 @@ Technologies and tools used:
   \item TestNG and Selenium for integration tests.
 \end{itemize}
 }
+
+%----------------------------------------------------------------------------------------
+%	NEW PAGE DELIMITER
+%	Place this block wherever you would like the content of your CV to go onto the next page
+%----------------------------------------------------------------------------------------
+
+\clearpage % Start a new page
+
+\userinformation % Print your information in the left column
+
+\framebreak % End of the first column
+
 %------------------------------------------------
-\entry
-{05/2011-11/2012}
-{Portugal Telecom}
-{Lisbon, Portugal}
-{\emph{Software Consultant} \\
-Development of an application monitoring solution for Portugal Telecom. Worked on UI components developed with:
+
+\CVItem{May 2011 - Nov 2012, \textit{Software Consultant}, Portugal Telecom}
+{Development of an application monitoring solution for Portugal Telecom. Worked on UI components developed with:
 \begin{itemize}
 \item Ruby on Rails, JQuery, Sinatra for the website;
 \item memcached for caching purposes;
@@ -64,26 +166,22 @@ Development of an application monitoring solution for Portugal Telecom. Worked o
 \item MySQL for the datasource.
 \end{itemize}
 }
+
 %------------------------------------------------
-\entry
-{11/2010-04/2011}
-{Nokia Siemens Networks}
-{Aveiro, Portugal}
-{\emph{Software Developer} \\
-Design and implementation of a functional prototype using several new concepts that could be added to NSN's main network and performance management solution. This analysis not included:
+
+\CVItem{Nov 2010 - Apr 2011, \textit{Software Developer}, Nokia Siemens Networks}
+{Design and implementation of a functional prototype using several new concepts that could be added to NSN's main network and performance management solution. This analysis not included:
 \begin{itemize}
 \item Oracle and PostgreSQL as database solutions;
 \item Portlets and GWT as web components;
 \item EMF as a modeling tool.
 \end{itemize}
 }
+
 %------------------------------------------------
-\entry
-{09/2009-10/2010}
-{Nokia Siemens Networks}
-{Aveiro, Portugal}
-{\emph{Software Developer} \\
-Migration of the continuous integration process used by NSN's network and
+
+\CVItem{Sept 2009 - Oct 2010, \textit{Software Developer}, Nokia Siemens Networks}
+{Migration of the continuous integration process used by NSN's network and
 performance management solution to a centralized (cloud based) environment.
 This new environment used:
 \begin{itemize}
@@ -92,14 +190,12 @@ This new environment used:
 \item SubVersion and Maven for source control and build management.
 \end{itemize}
 }
-\end{entrylist}
-\begin{entrylist}
-\entry
-{12/2007-09/2009}
-{Nokia Siemens Networks}
-{Aveiro, Portugal}
-{\emph{Software Developer} \\
-Prototyping and development of an ETL solution to be used by NSN's new network and performance management solution base on ESB (Enterprise Service Bus). \\
+
+%------------------------------------------------
+
+\CVItem{Dec 2007 - Nov 2009, \textit{Software Developer}, Nokia Siemens Networks}
+{Prototyping and development of an ETL solution to be used by NSN's new
+network and performance management solution base on ESB (Enterprise Service Bus).\\
 Implementation of a production pipe using:
 \begin{itemize}
 \item Ant for build management, later migrated to Maven;
@@ -108,92 +204,172 @@ Implementation of a production pipe using:
 \item Virtualization of test machines using KVM.
 \end{itemize}
 }
+
 %------------------------------------------------
-\entry
-{09/2006-11/2007}
-{Siemens Networks}
-{Aveiro, Portugal}
-{\emph{Software Developer Trainee} \\
-Activity developed as part of a professional trainee program.\\
+
+\CVItem{Sept 2006 - Nov 2007, \textit{Software Developer Trainee}, Siemens Networks}
+{Activity developed as part of a professional trainee program.\\
 Design and specification of a new data format used by Siemens to describe a
 telecommunication network. This data format was meant to be less verbose and
 error-prone. Development and test of modules for Siemens' performance
 management solution in both C++ and Java.
 }
+
 %------------------------------------------------
-\entry
-{03/2006-8/2006}
-{Siemens SA}
-{Perafita, Portugal}
-{\emph{Software Developer Trainee} \\
-Activity developed as part of a curricular trainee program.\\
+
+\CVItem{Mar 2006 - Aug 2006, \textit{Software Developer Trainee}, Siemens SA}
+{Activity developed as part of a curricular trainee program.\\
 Development of an IDE based on Eclipse RCP to aid on the development of
 Siemens’s network performance management solution.
 }
-\end{entrylist}
+
+%------------------------------------------------
+
+\Sep % Extra whitespace after the end of a major section
 
 %----------------------------------------------------------------------------------------
-%       TRAINING SECTION
+%	TRAINING
 %----------------------------------------------------------------------------------------
 
-\section{training}
+\CVSection{Training}
 
-\begin{entrylist}
 %------------------------------------------------
-\entry
-{05/2014}
-{Scrum Aliance}
-{Porto, Portugal}
-{Scrum Master course and CSM (Certified Scrum Master) exam.}
-%------------------------------------------------
-\entry
-{03/2012}
-{VMWare Educational Services}
-{Lisbon, Portugal}
-{Core Spring.}
-%------------------------------------------------
-\entry
-{02/2008}
-{Quality Tree Software}
-{Aveiro, Portugal}
-{Agile Testing and TDD (Test Driven Development).}
-%------------------------------------------------
-\entry
-{09/2007}
-{Learning Tree International}
-{Aveiro, Portugal}
-{Java Enterprise Application Development - JSP, JSF, EJB3, JPA, JMS.}
-\entry
-{08/2007}
-{Learning Tree International}
-{Aveiro, Portugal}
-{Advanced Java Programming - Annotations, concurrency, class loaders, NIO, JMX}
 
-\end{entrylist}
+\CVItem{May 2014, Scrum Aliance}{Scrum Master course and CSM (Certified Scrum Master) exam.}
+
+%------------------------------------------------
+
+\CVItem{Mar 2012, VMWare Educational Services}{Core Spring}
+
+%------------------------------------------------
+
+\CVItem{Feb 2008, Quality Tree Software}{Agile Testing and TDD (Test Driven Development).}
+
+%------------------------------------------------
+
+\CVItem{Sept 2007, Learning Tree International}{Java Enterprise Application Development - JSP, JSF, EJB3, JPA, JMS.}
+
+%------------------------------------------------
+
+\CVItem{Aug 2007, Learning Tree International}{Advanced Java Programming - Annotations, concurrency, class loaders, NIO, JMX}
+
+%------------------------------------------------
+
+\Sep % Extra whitespace after the end of a major section
 
 %----------------------------------------------------------------------------------------
-%       EDUCATION SECTION
+%	ABOUT ME
 %----------------------------------------------------------------------------------------
 
-\section{education}
+% \aboutme{About Me}{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel bibendum metus. Proin rutrum pharetra molestie. Cras sollicitudin nulla nec leo lobortis in tristique purus pretium. Ut eu felis nulla. Pellentesque condimentum justo ut ligula feugiat nec facilisis tellus ultricies. Nullam sit amet dictum ipsum. Sed lacus neque, hendrerit eu rhoncus nec, pellentesque vitae sem.}
 
-\begin{entrylist}
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\CVSection{Education}
+
 %------------------------------------------------
-\entry
-{09/2005-07/2006}
-{British Council}
-{Porto, Portugal}
+
+\CVItem{09/2005-07/2006, British Council}
 {CPE (Certificate of Proficiency in English).\\
-ESOL exam completed with a level B (between 75\% and 79\%.
-}
-%------------------------------------------------
-\entry
-{09/2001-09/2006}
-{Faculty of Engineering from the University of Porto}
-{Porto, Portugal}
-{Licentiate in Informatics and Computing Engineering completed with an average of 16 out of 20.
-}
+ESOL exam completed with a level B (between 75\% and 79\%.}
 
-\end{entrylist}
+%------------------------------------------------
+
+\CVItem{09/2001-09/2006, Faculty of Engineering from the University of Porto}
+{Licentiate in Informatics and Computing Engineering completed with an average of 16 out of 20.}
+
+%------------------------------------------------
+
+\Sep % Extra whitespace after the end of a major section
+
+%----------------------------------------------------------------------------------------
+%	COMMUNICATION SKILLS
+%----------------------------------------------------------------------------------------
+
+% \CVSection{Communication Skills}
+
+%------------------------------------------------
+
+% \CVItem{2015, \textit{Oral Presentation}, California Business Conference}{Presented research I conducted for my Masters of Engineering degree.}
+
+%------------------------------------------------
+
+% \CVItem{2014, \textit{Poster}, Annual Business Conference (Oregon)}{As part of the course work for BUS320, I created a poster analyzing several local businesses and presented this at a conference.}
+
+%------------------------------------------------
+
+% \Sep % Extra whitespace after the end of a major section
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+% \CVSection{Software Development Skills}
+
+%------------------------------------------------
+
+% \CVItem{Programming}
+% {\begin{tabular}{p{0.2\textwidth} p{0.2\textwidth} p{0.2\textwidth}}
+% \bluebullet Java &  \bluebullet Shell & \bluebullet Python\\
+% \bluebullet C++ &  \bluebullet PHP & \bluebullet Matlab\\
+% \end{tabular}}
+
+%------------------------------------------------
+
+% \CVItem{Computer Software}
+% {\begin{tabular}{p{0.2\textwidth} p{0.2\textwidth} p{0.2\textwidth}}
+%  \bluebullet MySQL &  \bluebullet iOS & \bluebullet Android\\
+% \end{tabular}}
+
+%------------------------------------------------
+
+% \Sep % Extra whitespace after the end of a major section
+
+%----------------------------------------------------------------------------------------
+%	NEW PAGE DELIMITER
+%	Place this block wherever you would like the content of your CV to go onto the next page
+%----------------------------------------------------------------------------------------
+
+% \clearpage % Start a new page
+
+% \userinformation % Print your information in the left column
+
+% \framebreak % End of the first column
+
+%----------------------------------------------------------------------------------------
+%	AWARDS
+%----------------------------------------------------------------------------------------
+
+% \CVSection{Awards}
+
+%------------------------------------------------
+
+% \CVItem{2010, \textit{Postgraduate Scholarship}, Cornell University}{Awarded to the top student in their final year of a Bachelors degree.}
+
+%------------------------------------------------
+
+% \Sep % Extra whitespace after the end of a major section
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS
+%----------------------------------------------------------------------------------------
+
+% \CVSection{Interests}
+
+%------------------------------------------------
+
+% \CVItem{Professional}{Data analysis, company profiling, risk analysis, economics, web design, web app creation, software design, marketing}
+
+%------------------------------------------------
+
+% \CVItem{Personal}{Piano, chess, cooking, dancing, running}
+
+%------------------------------------------------
+
+% \Sep % Extra whitespace after the end of a major section
+
+%----------------------------------------------------------------------------------------
 
 \end{document}
